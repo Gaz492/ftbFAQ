@@ -1,7 +1,7 @@
 {{#> layouts/base}}
     {{#*inline "content-block"}}
-        <h1>{{message}}</h1>
-        <h2>{{error.status}}</h2>
+        <h1 class="text-center"><span class="ion-alert-circled orange-text text-darken-3"></span> {{error.status}} {{message}}</h1>
+        <h2 class="text-center">The page you are looking for cannot be found</h2>
         {{#if debug}}
             <pre>{{error.stack}}</pre>
         {{/if}}

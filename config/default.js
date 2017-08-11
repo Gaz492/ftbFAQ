@@ -14,9 +14,9 @@ const config = {
     },
     faqTopics: {
         data: [
-            { uri: "tLog", category: "twitch", name: "Twitch log upload", title: "Uploading logs.hbs when using the Twitch app", url: "https://support.feed-the-beast.com/faq/tLog", enabled: true },
+            { uri: "tLog", category: "twitch", name: "Twitch log upload", title: "Uploading logs when using the Twitch app", url: "https://support.feed-the-beast.com/faq/tLog", enabled: true },
             { uri: "dlTwitch", category: "twitch", name: "Downloading FTB packs on Twitch", title: "Downloading FTB packs with the Twitch app", url: "https://support.feed-the-beast.com/faq/dlTwitchFTB", enabled: true },
-            { uri: "logs.hbs", category: "legacy", name: "Upload logs.hbs with FTB launcher", title: "Uploading logs.hbs with the FTB launcher", url: "https://support.feed-the-beast.com/faq/legacyLogs", enabled: true },
+            { uri: "logs", category: "legacy", name: "Upload logs with FTB launcher", title: "Uploading logs with the FTB launcher", url: "https://support.feed-the-beast.com/faq/legacyLogs", enabled: true },
             { uri: "twitchBug", category: "twitch", name: "Reporting Twitch app issues", title: "Reporting issues with the Twitch app", url: "https://support.feed-the-beast.com/faq/twitchBug", enabled: true },
             { uri: "dlServer", category: "server", name: "Downloading server files", title: "Downloading Server Files", url: "https://support.feed-the-beast.com/faq/downloadServer", enabled: true },
             { uri: "twitchImport", category: "twitch", name: "Importing packs", title: "Importing Packs", url: "https://support.feed-the-beast.com/faq/twitchImport", enabled: true },
