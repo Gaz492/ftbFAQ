@@ -6,7 +6,7 @@
 const config = {
     server: {
         port : 3000,
-        debug: true
+        debug: false
     },
     web: {
         title: "FTB FAQ",
