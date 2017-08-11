@@ -1,0 +1,9 @@
+{{#> layouts/base}}
+    {{#*inline "content-block"}}
+        <h1>{{message}}</h1>
+        <h2>{{error.status}}</h2>
+        {{#if debug}}
+            <pre>{{error.stack}}</pre>
+        {{/if}}
+    {{/inline}}
+{{/ layouts/base}}

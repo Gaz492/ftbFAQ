@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{{! Head }}
+<head>
+    {{#> head-block}}
+        {{> includes/head }}
+    {{/head-block}}
+</head>
+
+{{! Body }}
+<body class="body">
+{{! Navbar }}
+{{#> navbar-block}}
+    {{> includes/navbar }}
+{{/navbar-block}}
+
+{{! Banner }}
+{{#> banner-block}}
+    {{> includes/banner }}
+{{/banner-block}}
+
+{{! Content }}
+<div class="container" role="main">
+    <!--<div id="alertbox">-->
+        <!--<div class="alert alert-warning">FTB FAQ is currently being remade!</div>-->
+    <!--</div>-->
+    <div class="info-panel">
+        <div class="row">
+            <div class="col-md-12">
+                {{#> content-block }}
+                    <p>This shouldn't be here, if it is, something has probably gone terribly wrong.</p>
+                {{/content-block}}
+            </div>
+        </div>
+    </div>
+
+    {{#if home}}
+        <div class="info-panel">
+            <h4>Unable to find the answer your looking for? Try one of the following</h4>
+            <ul>
+                <li>Talk to us on IRC <a href="http://webchat.esper.net/?nick=Support...&amp;channels=ftb&amp;prompt=0">here</a>. (<a href="irc://irc.esper.net/FTB">irc.esper.net #FTB</a>)</li>
+                <li>Join our <a href="https://curse.com/ftb">Curse group</a> and talk to us there</li>
+                <li>You can also create a topic on our <a href="https://support.feed-the-beast.com">Support site</a></li>
+            </ul>
+        </div>
+    {{/if}}
+</div>
+
+{{! Footer }}
+{{#> footer-block }}
+    {{> includes/footer }}
+{{/footer-block}}
+</body>
+</html>
