@@ -24,7 +24,7 @@ const config = {
             { uri: "mcSettings", category: "twitch", name: "Twitch Minecraft settings", title: "Changing Minecraft settings with the Twitch app", url: "https://support.feed-the-beast.com/faq/mcSettingsTwitch", enabled: true },
             { uri: "twitchPackRepair", category: "twitch", name: "Repair Twitch pack", title: "Repairing modpacks on the Twitch app", url: "https://support.feed-the-beast.com/faq/twitchPackRepair", enabled: true },
             { uri: "serverSetup", category: "server", name: "Setting up a server", title: "Setting up a server", url: "https://support.feed-the-beast.com/faq/serverSetup", enabled: true },
-            { uri: "serverUpdate.hbs", category: "server", name: "Updating a server", title: "Updating a server", url: "https://support.feed-the-beast.com/faq/serverUpdate.hbs", enabled: true },
+            { uri: "serverUpdate", category: "server", name: "Updating a server", title: "Updating a server", url: "https://support.feed-the-beast.com/faq/serverUpdate", enabled: true },
             { uri: "j8u51", category: "faq", name: "Windows 10 Intel driver issues", title: "Windows 10 Intel driver issues", url: "https://support.feed-the-beast.com/faq/intelJ8U51", enabled: true }
         ]
     }
