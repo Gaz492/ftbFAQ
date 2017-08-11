@@ -5,7 +5,7 @@ const config = require('../config/default');
 const topics = config.faqTopics.data;
 
 /* GET home page. */
-router.get('/faq', function(req, res, next) {
+router.get('/', function(req, res, next) {
     var topicDetails = lodash.filter(topics, {'enabled': true} );
     var twitchTopics = [];
     var serverTopics = [];
@@ -40,7 +40,7 @@ router.get('/faq', function(req, res, next) {
     });
 });
 
-router.get('/faq/sitejson.json', function(req, res, next) {
+router.get('/sitejson.json', function(req, res, next) {
     var siteJSON = JSON.stringify( config.faqTopics );
     res.header("Content-Type", "application/json");
     res.render('json', {
@@ -48,7 +48,7 @@ router.get('/faq/sitejson.json', function(req, res, next) {
     });
 });
 
-router.get('/faq/:topic', function(req, res, next) {
+router.get('/:topic', function(req, res, next) {
     var topicParam = req.params.topic;
     var topicDetails = lodash.find(topics, {'uri': topicParam} );
     if((typeof topicDetails !== 'undefined') && topicDetails.enabled){
