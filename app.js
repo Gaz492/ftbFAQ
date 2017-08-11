@@ -35,7 +35,7 @@ app.use(cookieParser());
 //   indentedSyntax: true, // true = .sass and false = .scss
 //   sourceMap: true
 // }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + "/faq", 'public')));
 
 app.use('/faq', index);
 
