@@ -38,17 +38,13 @@ router.get('/', function(req, res, next) {
         pageName: "Home",
         home: true
     });
-});
-
-router.get('/sitejson.json', function(req, res, next) {
+}).get('/sitejson.json', function(req, res, next) {
     var siteJSON = JSON.stringify( config.faqTopics );
     res.header("Content-Type", "application/json");
     res.render('json', {
         json: siteJSON
     });
-});
-
-router.get('/:topic', function(req, res, next) {
+}).get('/:topic', function(req, res, next) {
     var topicParam = req.params.topic;
     var topicDetails = lodash.find(topics, {'uri': topicParam} );
     if((typeof topicDetails !== 'undefined') && topicDetails.enabled){
