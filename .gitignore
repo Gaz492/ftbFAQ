@@ -30,3 +30,7 @@ node_modules
 npm-debug.log
 
 \.idea/
+
+views/partials/\.DS_Store
+
+\.DS_Store
