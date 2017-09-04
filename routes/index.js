@@ -2,7 +2,8 @@ var express = require('express');
 var lodash = require('lodash');
 var router = express.Router();
 const config = require('../config/default');
-const topics = config.faqTopics.data;
+const sitePages = require('../config/sitePages');
+const topics = sitePages.faqTopics.data;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -39,7 +40,7 @@ router.get('/', function(req, res, next) {
         home: true
     });
 }).get('/sitejson.json', function(req, res, next) {
-    var siteJSON = JSON.stringify( config.faqTopics );
+    var siteJSON = JSON.stringify( sitePages.faqTopics );
     res.header("Content-Type", "application/json");
     res.render('json', {
         json: siteJSON
