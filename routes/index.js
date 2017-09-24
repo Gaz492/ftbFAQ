@@ -1,17 +1,17 @@
-var express = require('express');
-var lodash = require('lodash');
-var router = express.Router();
+const express = require('express');
+const lodash = require('lodash');
+const router = express.Router();
 const config = require('../config/default');
 const sitePages = require('../config/sitePages');
 const topics = sitePages.faqTopics.data;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var topicDetails = lodash.filter(topics, {'enabled': true} );
-    var twitchTopics = [];
-    var serverTopics = [];
-    var legacyTopics = [];
-    var faqTopics = [];
+    let topicDetails = lodash.filter(topics, {'enabled': true} );
+    let twitchTopics = [];
+    let serverTopics = [];
+    let legacyTopics = [];
+    let faqTopics = [];
 
     for(x in topicDetails){
         // console.log(x);
@@ -40,14 +40,14 @@ router.get('/', function(req, res, next) {
         home: true
     });
 }).get('/sitejson.json', function(req, res, next) {
-    var siteJSON = JSON.stringify( sitePages.faqTopics );
+    let siteJSON = JSON.stringify( sitePages.faqTopics );
     res.header("Content-Type", "application/json");
     res.render('json', {
         json: siteJSON
     });
 }).get('/:topic', function(req, res, next) {
-    var topicParam = req.params.topic;
-    var topicDetails = lodash.find(topics, {'uri': topicParam} );
+    let topicParam = req.params.topic;
+    let topicDetails = lodash.find(topics, {'uri': topicParam} );
     if((typeof topicDetails !== 'undefined') && topicDetails.enabled){
         res.render('faq', {
             siteInfo: {
@@ -66,7 +66,7 @@ router.get('/', function(req, res, next) {
             }
         });
     }else{
-        var err = new Error('Not Found');
+        let err = new Error('Not Found');
         err.status = 404;
         next(err);
     }
