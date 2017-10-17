@@ -1,41 +1,16 @@
-<ol>
-    <li>Do a save-all from console or in-game if you're OP</li>
-    <ul>
-        <li><code>Console: save-all</code></li>
-        <li><code>In-game: /save-all</code></li>
-    </ul>
-    <li>Stop the server from console or in-game if you're OP</li>
-    <ul>
-        <li><code>Console: stop</code></li>
-        <li><code>In-game: /stop</code></li>
-    </ul>
-    <li>Create a backup copy of your server folder in case anything goes wrong</li>
-    <li>Download the updated server files from curse or the FTB launcher</li>
-    <li>Unpack the files (don't unpack to the same location as your server files containing your world)</li>
-    <li>From your server folder remove all folders that comes with the new server zip file, usually the following (there might be more than listed below, or less):</li>
+<h3>Server setup guide (Windows)</h3>
+<p>FTB server setup guide (windows)</p>
+<p>First download the server files for the modpack you wish to create a server for. See this documentation for details on how to download the server files</p>
+<p>Extract the zip file to the desired location</p>
+<p>Run FTBInstall.bat by double clicking it and wait for it to finish running</p>
+<p>Make sure that eula=true is set in eula.txt</p>
+<p>Finally run ServerStart.bat by double clicking it.</p>
+<p>If you encounter a crash or an error please provide a console log of the error</p>
 
-    <ul>
-        <li>Folders</li>
-        <ul>
-            <li><code>config</code></li>
-            <li><code>libraries</code></li>
-            <li><code>mods</code></li>
-            <li><code>resources</code></li>
-            <li><code>scripts</code></li>
-        </ul>
-        <li>Files</li>
-        <ul>
-            <li><code>FTBserver-xxxxxxxx.jar</code></li>
-            <li><code>version.json</code></li>
-        </ul>
-    </ul>
-    <li>From the unpacked folder containing the updateded modpack, copy over all folders to your server folder</li>
-    <li>From the unpacked folder containing the updated modpack, copy over FTBserver-xxxxx.jar and version.json to your server folder</li>
-    <li>Start the server</li>
-    <li>When the server starts 1st time after update you want to look in the console and it might stop with text about fml confirm</li>
-    <ul>
-        <li><code>Console: /fml confirm</code></li>
-    </ul>
-    <li>When the server is done loading, log in and check that everything looks ok</li>
-    <li>If you're low on space you might want to remove the manual backup from disk when you know everything is OK, or move it to another location</li>
-</ol>
+<h3>Server setup guide (Linux)</h3>
+<p>First download the server files for the modpack you wish to create a server for. See this documentation for details on how to download the server files</p>
+<p>Extract the zip file to the desired location</p>
+<p>Run FTBInstall.sh by typing <code>sh FTBInstall.sh</code> and wait for it to finish running</p>
+<p>Make sure that eula=true is set in eula.txt</p>
+<p>Finally run ServerStart.sh by typing <code>sh ServerStart.sh</code>.</p>
+<p>If you encounter a crash or an error please provide a console log of the error</p>
