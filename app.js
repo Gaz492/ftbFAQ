@@ -1,41 +1,35 @@
-const express = require('express');
+var createError = require('http-errors');
+var express = require('express');
 const handlebars = require('express-handlebars');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const config = require('./config/default');
-
-const index = require('./routes/index');
+var index = require('./routes/index');
 
 var app = express();
 
 // view engine setup
 app.engine('.hbs',handlebars({
-    extname: 'hbs',
-    layoutDir: path.join(__dirname,'/views/layouts'),
-    partialsDir: [path.join(__dirname,'/views/partials')]
+  extname: 'hbs',
+  layoutDir: path.join(__dirname,'/views/layouts'),
+  partialsDir: [path.join(__dirname,'/views/partials')],
+  defaultLayout: false,
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/faq', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/faq', index);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  next(createError(404));
 });
 
 // error handler
@@ -46,15 +40,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error',{
-      siteInfo: {
-          title: config.web.title,
-          siteName: config.web.siteName
-
-      },
-      pageName: err.status,
-      debug: config.server.debug
-  });
+  res.render('error');
 });
 
 module.exports = app;
